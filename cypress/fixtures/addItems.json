@@ -1,0 +1,9 @@
+{
+    "products": ["zara", "iphone", "samsung"],
+    "cardNumber": "4444555566667777",
+    "expiryMonth": "06",
+    "expiryDay": "20",
+    "cardname": "Sam",
+    "cvv":"777",
+    "country": "Uk"
+}

@@ -1,0 +1,10 @@
+{
+  "firstName": "Sam",
+  "lastName": "Smith",
+  "email": "sam34@gmail.com",
+  "phone": "1234567890",
+  "occupation": "Engineer",
+  "gender": "Male",
+  "password": "337567890An@",
+  "confirmPassword": "337567890An@"
+}

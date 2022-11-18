@@ -1,0 +1,25 @@
+{
+  "name": "cypress_practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "test": "node_modules\\.bin\\cypress run",
+    "chrome:tests": "npm run test -- --browser chrome --headed",
+    "one:test": "npm run test -- --spec cypress/tests/e2e_tests/addingItemsToCart/*.js --headed "
+  },
+  "keywords": [
+    "Cypress",
+    "automation"
+  ],
+  "author": "Anton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Antony-Holovchenko/Cypress_practice/issues"
+  },
+  "homepage": "https://github.com/Antony-Holovchenko/Cypress_practice#readme",
+  "devDependencies": {
+    "cypress": "^11.0.1"
+  }
+}
