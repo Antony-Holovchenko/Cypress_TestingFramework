@@ -7,7 +7,9 @@ module.exports = defineConfig({
     },
     baseUrl: "https://rahulshettyacademy.com/client",
     specPattern: "cypress/tests/e2e_tests/",
-    downloadsFolder: "cypress/downloads/"
-
+    downloadsFolder: "cypress/downloads/",
+    reporter: 'mochawesome',
+    responseTimeout: 30000,
+    experimentalSessionAndOrigin: true
   }
 })

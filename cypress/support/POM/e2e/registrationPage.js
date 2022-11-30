@@ -19,7 +19,7 @@ class registration {
         this.elements.lastName().type(surname)
     }
 
-    enterEmailPhone( email, phone) {
+    enterEmailPhone(email, phone) {
         this.elements.email().type(email)
         this.elements.phone().type(phone)
     }
@@ -40,6 +40,7 @@ class registration {
     finishRegistration() {
         this.elements.checkbox().check()
         this.elements.registerBtn().click()
+        cy.wait(1000)
     }
 
 }
