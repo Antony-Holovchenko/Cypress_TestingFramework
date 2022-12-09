@@ -3,13 +3,15 @@ const { defineConfig } = require('cypress')
 module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
-      // implement node event listeners here
     },
     baseUrl: "https://rahulshettyacademy.com/client",
-    specPattern: "cypress/tests/e2e_tests/",
+    specPattern: "cypress/tests/",
     downloadsFolder: "cypress/downloads/",
     reporter: 'mochawesome',
     responseTimeout: 30000,
     experimentalSessionAndOrigin: true
+  },
+  env: {
+    apiUrl: "https://reqres.in/api"
   }
 })

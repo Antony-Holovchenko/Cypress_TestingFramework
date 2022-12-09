@@ -1,4 +1,5 @@
 
+//Custom commands
 Cypress.Commands.add('login', (email, password) => {
     cy.session([email, password], () => {
         cy.visit('/')
@@ -19,3 +20,7 @@ Cypress.Commands.add('login', (email, password) => {
         }
     })
  })
+
+ Cypress.Commands.add('getCurrentDate', () => {
+    return new Date().toISOString().slice(0, 10)
+})

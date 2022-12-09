@@ -1,0 +1,18 @@
+{
+   "users": [
+    {
+        "email": "peterParker@inc.com",
+        "password": "123123"
+    },
+   
+    {
+        "email": "SamJoe@uk.co",
+        "password": "%^&GGgghdr$5"
+    },
+    
+    {
+        "email": "VanessaSimpson@gmail.com",
+        "password": "89876543Ghj%^"
+    }
+   ] 
+}
