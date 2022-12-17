@@ -6,7 +6,7 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
     },
     baseUrl: "https://rahulshettyacademy.com/client",
-    specPattern: "cypress/tests/API_tests",
+    specPattern: "cypress/tests",
     downloadsFolder: "cypress/downloads/",
     reporter: 'mochawesome',
     responseTimeout: 30000,
