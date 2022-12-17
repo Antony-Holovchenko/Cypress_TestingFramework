@@ -13,6 +13,7 @@ module.exports = defineConfig({
     experimentalSessionAndOrigin: true
   },
   env: {
-    apiUrl: "https://reqres.in/api"
+    apiUrl: "https://reqres.in/api",
+    CYPRESS_RECORD_KEY: "14ee76a6-6308-416c-b5a0-35d3ee4846be"
   }
 })
