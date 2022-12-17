@@ -8,3 +8,6 @@ workflows:
           yarn:true
           store_artifacts:true
           record:true
+          filrers:
+            branches:
+            only:development
