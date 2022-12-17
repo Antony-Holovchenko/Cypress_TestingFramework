@@ -5,8 +5,6 @@ workflows:
   build:
     jobs:
       - cypress/install
-      environment:
-        CYPRESS_RECORD_KEY: 14ee76a6-6308-416c-b5a0-35d3ee4846be
       - cypress/run:
           requires:
             - cypress/install
