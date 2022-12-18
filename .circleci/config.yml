@@ -6,9 +6,10 @@ workflows:
     jobs:
       - cypress/install
       - cypress/run:
+          store_artifacts: true
           requires:
             - cypress/install
           record: true
           parallel: true
-          parallelism: 2
+          parallelism: 4
           group: 2 machines
