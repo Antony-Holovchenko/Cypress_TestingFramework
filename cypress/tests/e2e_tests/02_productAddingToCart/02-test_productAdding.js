@@ -36,7 +36,7 @@ describe('Shop test', () => {
         shop.enterCardDetails(productInfo.cardNumber, productInfo.expiryMonth,productInfo.expiryDay, productInfo.cardname, productInfo.cvv)
         shop.selectCountryAndContinue(productInfo.country)
         shop.downloadCSVDetailsFile()
-        cy.readFile(Cypress.config("fileServerFolder")+"/cypress/downloads/order-invoice_sam300.csv").then(function (text) { // verify the order file has our selected  products
+        cy.readFile(Cypress.config("fileServerFolder")+"/cypress/downloads/order-invoice_sam333.csv").then(function (text) { // verify the order file has our selected  products
             //cy.log(text)
             expect(text.includes(productInfo.products[2])).to.be.false
             expect(text.includes(productInfo.products[0])).to.be.true
