@@ -17,7 +17,6 @@ describe('Registration', () => {
             const elemText = elem.text()
             expect(elemText).to.equal('Account Created Successfully')
         })
-        cy.writeFile('cypress/fixtures/login.json', {email: registrationData.email, password: registrationData.password})
     })
 
     it("Verify validation for existing users", function () {
