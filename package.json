@@ -8,7 +8,8 @@
     "test": "node_modules\\.bin\\cypress run  --reporter mochawesome --headed",
     "chrome:tests": "npm run test -- --browser chrome --headed",
     "one:test": "npm run test -- --spec cypress/tests/e2e_tests/addingItemsToCart/*.js --headed ",
-    "api:tests": "npm run test -- --spec cypress/tests/API_tests"
+    "api:tests": "npm run test -- --spec cypress/tests/API_tests",
+    "dashboard": "cypress run --record --key 14ee76a6-6308-416c-b5a0-35d3ee4846be"
   },
   "keywords": [
     "Cypress",

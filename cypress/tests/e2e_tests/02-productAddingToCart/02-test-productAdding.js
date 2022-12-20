@@ -1,26 +1,30 @@
 import shop from '../../../support/POM/e2e/productAddingPage'
 import login from '../../../fixtures/login.json'
 import productInfo from '../../../fixtures/addItems.json'
+
 //Remeber to change characters after invoice_... according to your email
 // Example: "/cyprss/downloads/order-invoice_sam34.csv"
 // "sam34" - this is the characters in your email 
 //Attention, sometimes Cypress doesn't download files in Chrome, and you can try another browsers for this test suit
 
-describe('Shop test', () => {
+describe('Shop test', () => {      
     beforeEach(function() {
         cy.login(login.email, login.password)
     })
 
     it('Add items to cart and check their sum', function() {
         cy.visit('/')
+        
         let sum = 0
         let actualResult = 0 
+        let readFileUserName = login.email.slice(0, 6)
+
         productInfo.products.forEach((element) => { //select all needed products
             cy.selectProduct(element)
         })
         shop.goToCatr()
     
-         cy.get('.prodTotal').each(($el, index, $list) => { //take all prices near selected products 
+        cy.get('.prodTotal').each(($el, index, $list) => { //take all prices near selected products 
             const num = $el.text().split(" ") // separate $ character
             let res = Number(num[1]) //create from string -> number
             sum = sum + res 
@@ -36,7 +40,7 @@ describe('Shop test', () => {
         shop.enterCardDetails(productInfo.cardNumber, productInfo.expiryMonth,productInfo.expiryDay, productInfo.cardname, productInfo.cvv)
         shop.selectCountryAndContinue(productInfo.country)
         shop.downloadCSVDetailsFile()
-        cy.readFile(Cypress.config("fileServerFolder")+"/cypress/downloads/order-invoice_sam300.csv").then(function (text) { // verify the order file has our selected  products
+        cy.readFile(Cypress.config("fileServerFolder")+"/cypress/downloads/order-invoice_"+readFileUserName+".csv").then(function (text) { // verify the order file has our selected  products
             //cy.log(text)
             expect(text.includes(productInfo.products[2])).to.be.false
             expect(text.includes(productInfo.products[0])).to.be.true

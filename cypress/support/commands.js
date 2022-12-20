@@ -1,3 +1,4 @@
+import registrationData from '../fixtures/registration.json'
 
 //Custom commands
 Cypress.Commands.add('login', (email, password) => {
