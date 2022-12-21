@@ -1,3 +1,5 @@
+
+
 class addItems {
     elements = {
         cart: () => cy.get(':nth-child(4) > .btn'),
@@ -12,7 +14,9 @@ class addItems {
         orders: () => cy.get(':nth-child(3) > .btn'),
         deleteBtn: () => cy.get('button[class="btn btn-danger"]'),
         sidebarCheckboxes: () => cy.get('div input[type="checkbox"]'),
-        productName: () => cy.get('h5')
+        productName: () => cy.get('h5'),
+        price: () => cy.get('.prodTotal'),
+        total: () => cy.get(':nth-child(2) > .value')
     }
 
     getProductName() {
@@ -25,8 +29,8 @@ class addItems {
 
     checkout() {
         cy.contains('Checkout').click()
-    }
-
+    }   
+    
     enterCardDetails(cardNumber, expMonth, expDay, cardName, cvvCode) {
         this.elements.cardNum().clear().type(cardNumber)
         this.elements.cardMothExpiry().select(expMonth)

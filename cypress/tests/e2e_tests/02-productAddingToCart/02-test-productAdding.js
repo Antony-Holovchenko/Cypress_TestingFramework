@@ -12,7 +12,7 @@ describe('Shop test', () => {
         cy.login(login.email, login.password)
     })
 
-    it('Add items to cart and check their sum', function() {
+    it.only('Add items to cart and check their sum', function() {
         cy.visit('/')
         
         let sum = 0
@@ -24,13 +24,13 @@ describe('Shop test', () => {
         })
         shop.goToCatr()
     
-        cy.get('.prodTotal').each(($el, index, $list) => { //take all prices near selected products 
+        shop.elements.price().each(($el, index, $list) => { //take all prices near selected products 
             const num = $el.text().split(" ") // separate $ character
             let res = Number(num[1]) //create from string -> number
             sum = sum + res 
         })
-        
-        cy.get(':nth-child(2) > .value').then((elem) => {
+
+        shop.elements.total().then((elem) => {
             const totalSum = elem.text().replace(/[^0-9]/g, '') //delete $ character and left only numbers
             actualResult = Number(totalSum)
             expect(sum).to.equal(actualResult)
